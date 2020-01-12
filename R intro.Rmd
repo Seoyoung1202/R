@@ -1,0 +1,91 @@
+---
+title: "R intro"
+output: html_document
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R intro
+
+## Vector
+```{r vector1}
+x<-c(1,2,3,4); x
+y<-c(x,0,x); y
+x + x
+x * x
+x - y # 벡터의 길이가 다를 땐 순환
+x / y
+```
+### 수열 벡터
+```{r vector2}
+1:5; 5:1
+1:5*2; (1:5)*2
+#이부분은 뭐지?
+n<-5; 1:n; 1:n-1; 1:(n-1)
+```
+```{r vector3}
+seq(1,5); seq(1,5,2)
+seq(length=5,from=1,by=2)
+seq(from=1,to=5,by=2)
+
+x<-c('a','b')
+rep(x); rep(x,2)
+rep(x,times=3); rep(x,each=5)
+```
+### 논리 벡터
+```{r vector4}
+x<-1:5
+x>2; x==3; x!=4
+x>=1 & x<=1; x>=1 | x<=1
+```
+### 문자 벡터
+#### cat() & paste()
+```{r cat}
+x<-1:4
+y<-c('a','b','c','d')
+cat(x, y, '\n')
+cat(x); cat(y) # cat() 다음 문자가 같은 행에 붙어 출력된다
+# cat()은 벡터를 합쳐서 보여줌
+# cat()은 print()와 달리 개행을 하지 않음
+# 프롬프트가 결과 바로 오른쪽에 붙는 식
+cat('\n', x, y, sep='\n') # \n을 문자취급하지 않으면 에러
+cat(x, y, sep=',')
+```
+```{r paste}
+paste(x, y); paste(x, y, sep='') # paste()는 한 칸 띄우는 것이 default
+paste(x, y, sep='-') 
+```
+
+## Matrix
+```{r matrix}
+matrix(c(1,2,3,4), ncol=2)
+#↓방향으로 입력됨
+```
+
+## 계산
+```{r calc}
+length(x); range(x)
+sum(x); prod(x)
+min(x); max(x); 
+```
+
+## 기초 통계량
+```{r stat}
+mean(x)
+var(x)
+sd(x)
+```
+
+## 기타
+```{r intro}
+ls() # show list of variables
+```
+
+## Object Type
+```{r type}
+# pdf page7
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
